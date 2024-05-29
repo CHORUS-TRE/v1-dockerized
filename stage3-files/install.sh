@@ -82,5 +82,52 @@ echo "127.0.0.1 hip.local" >> /etc/hosts
 echo "127.0.0.1 keycloak.local" >> /etc/hosts
 echo "127.0.0.1 keycloak_backend.local" >> /etc/hosts
 
+cd ..
+make nextcloud-config
+
+
+cd ..
+git clone https://github.com/HIP-infrastructure/app-in-browser.git
+cd app-in-browser
+git checkout feat/docker
+
+mkdir -p /etc/docker
+cat <<EOF > /etc/docker/daemon.json
+{
+   "default-address-pools":[
+      {
+         "base":"172.17.0.0/12",
+         "size":20
+      },
+      {
+         "base":"192.168.0.0/16",
+         "size":24
+      }
+   ]
+}
+EOF
+
+# restart dockerd
+
+cp hip.config.docker.yml hip.config.yml
+cp backend/backend.env.template backend/backend.env
+
+./scripts/installrequirements.sh
+# ./scripts/restrictnetwork.sh
+./scripts/downloadall.py
+# TODO replace by env vars
+./scripts/gencreds.sh backend_username backend_password 
+./scripts/installbackend.sh
+
+
+cd ../frontend
+mkdir -p /mnt/collab
+make install-ghostfs
+CERT=$(awk 'NF {sub(/\r/, ""); printf "%s\\\\n",$0;}' ghostfs/cert.pem)
+sed -i -e "s|your_cert_private|$CERT|g" /root/app-in-browser/hip.config.yml
+sed -i -e "s|your_cert_collab|$CERT|g" /root/app-in-browser/hip.config.yml
+
+pm2 save
+
 # killall dockerd
 # sleep 1
