@@ -20,4 +20,4 @@ pids=$(pgrep supervisord)
 kill $pids
 sleep 2
 
-cp /var/lib/docker /root/var-lib-docker
+cp -r /var/lib/docker /root/var-lib-docker
