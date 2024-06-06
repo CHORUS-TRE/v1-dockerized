@@ -11,7 +11,7 @@ echo "127.0.0.1 hip.local" >> /etc/hosts
 echo "127.0.0.1 keycloak.local" >> /etc/hosts
 echo "127.0.0.1 keycloak_backend.local" >> /etc/hosts
 
-mv /root/var-lib-docker /var/lib/docker
+#mv /root/var-lib-docker /var/lib/docker
 
 start-docker.sh
 until docker info; do sleep 1; done

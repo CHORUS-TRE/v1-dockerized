@@ -5,7 +5,7 @@ set -e
 set -o xtrace
 cd "${0%/*}"
 
-mv /root/var-lib-docker /var/lib/docker
+#mv /root/var-lib-docker /var/lib/docker
 
 start-docker.sh
 until docker info; do sleep 1; done
