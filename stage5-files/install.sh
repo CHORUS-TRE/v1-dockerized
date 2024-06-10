@@ -25,8 +25,17 @@ docker compose --env-file .env -f docker-compose.yml up -d || true
 
 sleep 1
 
+function set_trusted_domains {
+    sleep 50
+    current_domain=$(docker exec --user www-data cron php occ config:system:get trusted_domains 1)
+    if [ "$current_domain" != "$NEXTCLOUD_VIRTUAL_HOST" ]; then
+        docker exec --user www-data cron php occ config:system:set trusted_domains 1 --value="$NEXTCLOUD_VIRTUAL_HOST"
+    fi
+}
+
 cd /root/frontend/nextcloud-docker
 docker compose --env-file ../.env -f docker-compose.yml up -d || true
+set_trusted_domains &
 
 sleep 1
 
