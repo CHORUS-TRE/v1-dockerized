@@ -22,5 +22,7 @@ services:
       NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:-hip.local}
       IAM_BASE_EXTERNAL_URL: http://keycloak.local:8080
       KEYCLOAK_HOSTNAME_URL: http://keycloak.local:8080
+      REMOTE_APP_API: http://hip.local:9001/api
+      COLLAB_REMOTE_APP_API: http://hip.local:9001/api
 
 
