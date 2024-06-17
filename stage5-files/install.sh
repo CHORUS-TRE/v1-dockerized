@@ -19,6 +19,10 @@ until docker info; do sleep 1; done
 sleep 2
 
 pm2 resurrect
+cd /root/frontend
+pm2 start pm2/ecosystem.config.js
+cd /root/app-in-browser
+pm2 start pm2/ecosystem.config.js
 
 cd /root/frontend
 docker compose --env-file .env -f docker-compose.yml up -d || true
