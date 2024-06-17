@@ -14,8 +14,8 @@ services:
       - ./stage5-files:/root/stage5-files
       - ./${pwd}/var-lib-docker:/var/lib/docker
     environment:
-      NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:hip.local}
-      IAM_BASE_URL: http://keycloak.local:8080
+      NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:-hip.local}
+      IAM_BASE_EXTERNAL_URL: http://keycloak.local:8080
       KEYCLOAK_HOSTNAME_URL: http://keycloak.local:8080
 
 

@@ -102,13 +102,14 @@ sed -i -e "s|your_cert_collab|$CERT|g" /root/app-in-browser/hip.config.yml
 
 # TODO to allow minimal exterior run
 OK - Change nextcloud allowed host
-- change keycloak host
-   - change sociallogin redirect url to match new host
-- allow any url for xpra? 
+OK - change keycloak host
+OK   - change sociallogin redirect url to match new host
+NONEED - allow any url for xpra? 
 
 # TODO to allow a bit of cust.
 - change default nextcloud user/pass 
 - change default nextcloud admin creds
 - change keycloak admin pass
+- persist state
 
 ```
