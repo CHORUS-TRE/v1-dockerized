@@ -91,4 +91,24 @@ cp backend/backend.env.template backend/backend.env
 ./scripts/gencreds.sh backend_username backend_password 
 ./scripts/installbackend.sh
 
+
+cd ..
+mkdir -p /mnt/collab
+make install-ghostfs
+CERT=$(awk 'NF {sub(/\r/, ""); printf "%s\\\\n",$0;}' ghostfs/cert.pem)
+sed -i -e "s|your_cert_private|$CERT|g" /root/app-in-browser/hip.config.yml
+sed -i -e "s|your_cert_collab|$CERT|g" /root/app-in-browser/hip.config.yml
+
+
+# TODO to allow minimal exterior run
+OK - Change nextcloud allowed host
+- change keycloak host
+   - change sociallogin redirect url to match new host
+- allow any url for xpra? 
+
+# TODO to allow a bit of cust.
+- change default nextcloud user/pass 
+- change default nextcloud admin creds
+- change keycloak admin pass
+
 ```
