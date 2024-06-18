@@ -11,11 +11,11 @@ services:
     volumes:
       - ./run-files:/root/run-files
       - ./${pwd}/var-lib-docker:/var/lib/docker
-      # - ./data/mnt:/mnt
-      # - ./data/db_keycloak:/root/frontend/keycloak/postgres_data
-      # - ./data/db_nextcloud:/root/frontend/nextcloud-docker/db
-      # - ./data/redis_nextcloud:/root/frontend/nextcloud-docker/redis/data
-      # - ./data/redis_gateway:/root/frontend/gateway/redis/data
+      - ./data/mnt:/mnt
+      - ./data/db_keycloak:/root/frontend/keycloak/postgres_data
+      - ./data/db_nextcloud:/root/frontend/nextcloud-docker/db
+      - ./data/redis_nextcloud:/root/frontend/nextcloud-docker/redis/data
+      - ./data/redis_gateway:/root/frontend/gateway/redis/data
     environment:
       NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:-hip.local}
       IAM_BASE_EXTERNAL_URL: http://keycloak.local:8080

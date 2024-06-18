@@ -187,9 +187,24 @@ pm2 save
 
 sleep 3
 
+pm2 kill
+
 pids=$(pgrep supervisord)
 kill $pids
 sleep 10
 
-#make occ c=maintenance:install 
+
+cp_backup() {
+   CP_PATH=$1
+   mkdir -p /backup
+
+   cp -Rp "$CP_PATH" "/backup/$CP_PATH"
+}
+
+cp_backup /mnt
+cp_backup /root/frontend/keycloak/postgres_data
+cp_backup /root/frontend/nextcloud-docker/db
+cp_backup /root/frontend/nextcloud-docker/redis/data
+cp_backup /root/frontend/gateway/redis/data
+
 

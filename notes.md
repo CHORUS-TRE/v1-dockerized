@@ -112,4 +112,13 @@ NONEED - allow any url for xpra?
 - change keycloak admin pass
 - persist state
 
+
+#TODO
+- persistance
+- simplify env var to only one or two
+- pull xpra
+- icone filemanager
+- logout add redirect
+
+
 ```
