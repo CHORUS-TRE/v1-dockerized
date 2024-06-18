@@ -24,5 +24,7 @@ services:
       KEYCLOAK_HOSTNAME_URL: http://keycloak.local:8080
       REMOTE_APP_API: http://hip.local:9001/api
       COLLAB_REMOTE_APP_API: http://hip.local:9001/api
+      BACKEND_DOMAIN: http://hip.local:9001
+      ALLOWED_FRAME_DOMAIN: hip.local:9001
 
 
