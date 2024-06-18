@@ -24,6 +24,6 @@ services:
       COLLAB_REMOTE_APP_API: http://hip.local:9001/api
       BACKEND_DOMAIN: http://hip.local:9001
       ALLOWED_FRAME_DOMAIN: hip.local:9001
-      BACKGROUND_COLOR: "#020817"
+      BACKGROUND_COLOR: "#07020f"
 
 
