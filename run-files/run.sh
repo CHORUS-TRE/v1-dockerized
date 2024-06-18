@@ -46,5 +46,10 @@ sleep 1
 cd /root/frontend/keycloak
 docker compose --env-file .env -f docker-compose.yml up -d || true
 
+if [ -e "/root/run-files/logo.png" ]; then
+    mkdir -p /mnt/nextcloud-dp/nextcloud/shared
+    cp /root/run-files/logo.png /mnt/nextcloud-dp/nextcloud/shared
+fi
+
 
 tail -f /dev/null

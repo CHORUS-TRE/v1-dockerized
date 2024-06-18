@@ -2,16 +2,16 @@ version: '3.8'
 
 services:
   chorusv1:
-    image: registry.build.chorus-tre.ch/chorusv1-stage4
+    image: registry.build.chorus-tre.ch/chorusv1-stage3
     container_name: chorusv1
     privileged: true
-    entrypoint: /root/stage5-files/install.sh
+    entrypoint: /root/run-files/run.sh
     ports:
       - "8888:80"
       - "8080:8080"
       - "9001:9001"
     volumes:
-      - ./stage5-files:/root/stage5-files
+      - ./run-files:/root/run-files
       - ./${pwd}/var-lib-docker:/var/lib/docker
       # - ./data/mnt:/mnt
       # - ./data/db_keycloak:/root/frontend/keycloak/postgres_data
@@ -26,5 +26,6 @@ services:
       COLLAB_REMOTE_APP_API: http://hip.local:9001/api
       BACKEND_DOMAIN: http://hip.local:9001
       ALLOWED_FRAME_DOMAIN: hip.local:9001
+      BACKGROUND_COLOR: "#1e2633"
 
 
