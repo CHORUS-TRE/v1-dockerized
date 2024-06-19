@@ -3,7 +3,7 @@
 <details>
   <summary>Requirements</summary>
   
-- Ubuntu 22.04 
+- Ubuntu 22.04 or 24.04
     - (Only OS tested, other linux with cgroups v2 might work)
 - 500Gb Storage
 - 64Gb Ram
@@ -18,11 +18,12 @@
   
 ### Heading
 1. Create a VM
-    - Ubuntu 22.04
+    - Ubuntu 22.04 or 24.04
     - 500Gb Hard disk
     - 64Gb Ram
+    - 16 VCPU
     - Assign a public IP
-    - Create a domain name, eg "demo2.chorus-tre.ch"
+    - Create a domain name, eg "demo.chorus-tre.ch"
     - Connect via ssh
 2. Create a user with sudo privileges, ie "chorus"
 3. Login as "chorus"
@@ -37,10 +38,10 @@
 
 ### Setup
 1. Edit docker-compose.yml
-2. Replace all hostname with yours, like "demo2.chorus-tre.ch", keep port if single domain
+2. Replace all hostname with yours, like "demo.chorus-tre.ch", keep port if single domain
     - If needed replace 8888 by 80
 3. `docker compose up`
-4. http://demo2.chorus-tre.ch:8888/login
+4. http://demo.chorus-tre.ch:8888/login
 5. Login with the default user
     - Use log in with "user" and "password"
     - in the following screen you can change the inital password
