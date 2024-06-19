@@ -3,16 +3,17 @@
 <details>
   <summary>(Optional) Create a VM </summary>
   
-  ### Heading
-    1. Create a VM 
-    Ubuntu 22.04
-    500Gb Hard disk
-    64Gb Ram
-    Assign a public IP
-    Create a domain name, eg "demo2.chorus-tre.ch"
-    Connect via ssh
-    2. Create a user with sudo privileges, ie "chorus"
-    3. Login as "chorus"
+### Heading
+1. Create a VM 
+    - Ubuntu 22.04
+    - 500Gb Hard disk
+    - 64Gb Ram
+    - Assign a public IP
+    - Create a domain name, eg "demo2.chorus-tre.ch"
+    - Connect via ssh
+2. Create a user with sudo privileges, ie "chorus"
+3. Login as "chorus"
+
 </details>
 
 ### Requirements
