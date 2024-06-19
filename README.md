@@ -36,10 +36,11 @@
 3. cd into the cloned folder 
 
 ### Setup
-1. edit docker-compose.yml
-2. replace all hostname with yours, like "demo2.chorus-tre.ch", keep port if single domain
-    - if needed replace 8888 by 80
+1. Edit docker-compose.yml
+2. Replace all hostname with yours, like "demo2.chorus-tre.ch", keep port if single domain
+    - If needed replace 8888 by 80
 3. `docker compose up`
 4. http://demo2.chorus-tre.ch:8888/login
-5. use log in with "user" and "password"
+5. Use log in with "user" and "password", in the following screen you can set the inital password
 6. To login as admin, use the "Log in with username or email", use "nextcloud_admin_user", "nextcloud_admin_password"
+7. To add user login in the keycloak url, login with admin password admin and create them under the hip realm
