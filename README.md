@@ -1,10 +1,23 @@
 # Install CHORUS v1 on Docker
 
 <details>
-  <summary><b>(Optional) Create a VM</b></summary>
+  <summary>Requirements</summary>
+  
+- Ubuntu 22.04 
+    - (Only OS tested, other linux with cgroups v2 might work)
+- 500Gb Storage
+- 64Gb Ram
+- Docker with root access 
+    - (container must run in privileged mode)
+</details>
+
+<br>
+
+<details>
+  <summary><b style="font-size:1.17em;">(Optional) Create a VM</b></summary>
   
 ### Heading
-1. Create a VM 
+1. Create a VM
     - Ubuntu 22.04
     - 500Gb Hard disk
     - 64Gb Ram
@@ -16,7 +29,7 @@
 
 </details>
 
-### Requirements
+### Install requirements
 1. Install docker from the official documentation on docker.com
     - Add yourself `sudo usermod -aG docker $USER`
 2. `git clone git@github.com:CHORUS-TRE/v1-dockerized.git`
