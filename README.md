@@ -1,7 +1,7 @@
 # Install CHORUS v1 on Docker
 
 <details>
-  <summary>(Optional) Create a VM </summary>
+  <summary><b>(Optional) Create a VM</b></summary>
   
 ### Heading
 1. Create a VM 
