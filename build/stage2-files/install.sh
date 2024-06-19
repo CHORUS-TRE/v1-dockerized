@@ -196,15 +196,15 @@ sleep 10
 
 cp_backup() {
    CP_PATH=$1
-   mkdir -p /backup
+   mkdir -p "/backup$CP_PATH"
 
-   cp -Rp "$CP_PATH" "/backup/$CP_PATH"
+   cp -RTp "$CP_PATH" "/backup$CP_PATH"
 }
 
-cp_backup /mnt
-cp_backup /root/frontend/keycloak/postgres_data
-cp_backup /root/frontend/nextcloud-docker/db
-cp_backup /root/frontend/nextcloud-docker/redis/data
-cp_backup /root/frontend/gateway/redis/data
+cp_backup /mnt/
+cp_backup /root/frontend/keycloak/postgres_data/
+cp_backup /root/frontend/nextcloud-docker/db/
+cp_backup /root/frontend/nextcloud-docker/redis/data/
+cp_backup /root/frontend/gateway/redis/data/
 
 

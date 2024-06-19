@@ -11,21 +11,22 @@ echo "127.0.0.1 hip.local" >> /etc/hosts
 echo "127.0.0.1 keycloak.local" >> /etc/hosts
 echo "127.0.0.1 keycloak_backend.local" >> /etc/hosts
 
-if [ ! -e /backup/initial_setup_done ]; then
+if [ ! -e /mnt/initial_setup_done ]; then
     restore_backup() {
         CP_PATH=$1
-        mkdir -p "/backup/$CP_PATH"
+        mkdir -p "/backup$CP_PATH"
+        mkdir -p "$CP_PATH"
 
-        cp -Rp "/backup/$CP_PATH" "$CP_PATH"
+        cp -RTp "/backup$CP_PATH" "$CP_PATH"
     }
 
-    restore_backup /mnt
-    restore_backup /root/frontend/keycloak/postgres_data
-    restore_backup /root/frontend/nextcloud-docker/db
-    restore_backup /root/frontend/nextcloud-docker/redis/data
-    restore_backup /root/frontend/gateway/redis/data
+    restore_backup /mnt/
+    restore_backup /root/frontend/keycloak/postgres_data/
+    restore_backup /root/frontend/nextcloud-docker/db/
+    restore_backup /root/frontend/nextcloud-docker/redis/data/
+    restore_backup /root/frontend/gateway/redis/data/
 
-    echo "1" > /backup/initial_setup_done
+    echo "1" > /mnt/initial_setup_done
 fi
 #mv /root/var-lib-docker /var/lib/docker
 

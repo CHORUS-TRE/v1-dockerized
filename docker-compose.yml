@@ -1,6 +1,6 @@
 services:
   chorusv1:
-    image: registry.build.chorus-tre.ch/chorusv1-stage3
+    image: registry.build.chorus-tre.ch/chorusv1
     container_name: chorusv1
     privileged: true
     entrypoint: /root/run-files/run.sh
@@ -17,6 +17,7 @@ services:
       - ./data/redis_nextcloud:/root/frontend/nextcloud-docker/redis/data
       - ./data/redis_gateway:/root/frontend/gateway/redis/data
     environment:
+      BASE_URL: http://localhost:8888
       NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:-hip.local}
       IAM_BASE_EXTERNAL_URL: http://keycloak.local:8080
       KEYCLOAK_HOSTNAME_URL: http://keycloak.local:8080

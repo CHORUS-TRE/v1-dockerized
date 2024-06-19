@@ -114,11 +114,10 @@ NONEED - allow any url for xpra?
 
 
 #TODO
-- persistance
+ok - persistance
 - simplify env var to only one or two
-- pull xpra
+ok - pull xpra
 - icone filemanager
 - logout add redirect
-
 
 ```
