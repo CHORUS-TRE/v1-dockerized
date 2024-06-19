@@ -17,14 +17,19 @@ services:
       - ./data/redis_nextcloud:/root/frontend/nextcloud-docker/redis/data
       - ./data/redis_gateway:/root/frontend/gateway/redis/data
     environment:
+      # landing url 
       BASE_URL: http://localhost:8888
+      # allowed base domain
       NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:-hip.local}
+      # keycloak url
       IAM_BASE_EXTERNAL_URL: http://keycloak.local:8080
       KEYCLOAK_HOSTNAME_URL: http://keycloak.local:8080
+      # xpra urls
       REMOTE_APP_API: http://hip.local:9001/api
       COLLAB_REMOTE_APP_API: http://hip.local:9001/api
       BACKEND_DOMAIN: http://hip.local:9001
       ALLOWED_FRAME_DOMAIN: hip.local:9001
+      # background colors
       BACKGROUND_COLOR: "#07020f"
 
 
