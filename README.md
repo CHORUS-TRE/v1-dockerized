@@ -14,7 +14,7 @@
 <br>
 
 <details>
-  <summary><b style="font-size:1.17em;">(Optional) Create a VM</b></summary>
+  <summary><b style="font-size:1.25em;">(Optional) Create a VM</b></summary>
   
 ### Heading
 1. Create a VM
