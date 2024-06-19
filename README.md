@@ -41,6 +41,13 @@
     - If needed replace 8888 by 80
 3. `docker compose up`
 4. http://demo2.chorus-tre.ch:8888/login
-5. Use log in with "user" and "password", in the following screen you can set the inital password
-6. To login as admin, use the "Log in with username or email", use "nextcloud_admin_user", "nextcloud_admin_password"
-7. To add user login in the keycloak url, login with admin password admin and create them under the hip realm
+5. Login with the default user
+    - Use log in with "user" and "password"
+    - in the following screen you can change the inital password
+6. To login as the nextcloud admin
+    - use the "Log in with username or email", 
+    - use "nextcloud_admin_user" pasword "nextcloud_admin_password"
+7. To add a user and administrate keycloak
+    - login in the keycloak url, 
+    - login with "admin" password "admin" 
+    - and create the users under the hip realm
