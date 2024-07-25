@@ -52,3 +52,6 @@
     - login in the keycloak url, 
     - login with "admin" password "admin" 
     - and create the users under the hip realm
+
+Any use of the software for purposes other than academic research, including for commercial purposes, shall be requested in advance from CHUV.
+
