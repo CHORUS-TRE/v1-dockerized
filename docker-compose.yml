@@ -31,5 +31,6 @@ services:
       ALLOWED_FRAME_DOMAIN: hip.local:9001
       # background colors
       BACKGROUND_COLOR: "#07020f"
+      BACKEND_DOMAIN_APP_IN_BROWSER: http://hip.local:9001
 
 

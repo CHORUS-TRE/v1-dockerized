@@ -76,6 +76,9 @@ pm2 start pm2/ecosystem.config.js
 cd /root/frontend
 docker compose --env-file .env -f docker-compose.yml up -d || true
 
+cd /root/app-in-browser
+pm2 start pm2/ecosystem.config.js
+
 sleep 1
 
 function set_trusted_domains {
