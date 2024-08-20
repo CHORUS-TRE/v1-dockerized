@@ -31,7 +31,7 @@ services:
       REMOTE_APP_API: http://hip.local:9001/api
       COLLAB_REMOTE_APP_API: http://hip.local:9001/api
       BACKEND_DOMAIN: http://hip.local:9001
-      ALLOWED_FRAME_DOMAIN: hip.local:9001
+      ALLOWED_FRAME_DOMAINS: "hip.local:9001" # if multiple domains split them by single space
       # background colors
       BACKGROUND_COLOR: "#07020f"
       BACKEND_DOMAIN_APP_IN_BROWSER: http://hip.local:9001
