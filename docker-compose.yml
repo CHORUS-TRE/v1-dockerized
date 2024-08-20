@@ -19,6 +19,9 @@ services:
     environment:
       # landing url 
       BASE_URL: http://localhost:8888
+      EXT_CADDY_BASE_DOMAIN: http://
+      EXT_CADDY_KEYCLOAK_DOMAIN: https://domain:8443
+      EXT_CADDY_KEYCLOAK_LISTEN_ENABLED: 0 # enable for https
       # allowed base domain
       NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:-hip.local}
       # keycloak url
