@@ -59,7 +59,7 @@ pull_image_if_not_present postgres latest
 pull_image_if_not_present nextcloud 24.0.12-fpm
 pull_image_if_not_present postgres 14
 pull_image_if_not_present redis latest
-pull_image_if_not_present registry.hbp.link/hip/app-in-browser/xpra-server master
+pull_image_if_not_present registry.hbp.link/hip/app-in-browser/xpra-server chorusbg
 pull_image_if_not_present registry.hbp.link/hip/app-in-browser/filemanager latest
 pull_image_if_not_present registry.hbp.link/hip/app-in-browser/terminal_dip latest
 pull_image_if_not_present registry.hbp.link/hip/app-in-browser/vscode latest

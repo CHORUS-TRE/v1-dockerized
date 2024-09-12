@@ -8,6 +8,9 @@ services:
       - "8888:80"
       - "8080:8080"
       - "9001:9001"
+      #- "443:443" if https
+      #- "8443:8443" if https
+      #- "9443:9443" if https
     volumes:
       - ./run-files:/root/run-files
       - ./${pwd}/var-lib-docker:/var/lib/docker
@@ -22,6 +25,8 @@ services:
       EXT_CADDY_BASE_DOMAIN: http://
       EXT_CADDY_KEYCLOAK_DOMAIN: https://domain:8443
       EXT_CADDY_KEYCLOAK_LISTEN_ENABLED: 0 # enable for https
+      EXT_CADDY_APP_IN_BROWSER_DOMAIN: https://domain:9443
+      EXT_CADDY_APP_IN_BROWSER_LISTEN_ENABLED: 0 # enable for https
       # allowed base domain
       NEXTCLOUD_VIRTUAL_HOST: ${NEXTCLOUD_VIRTUAL_HOST:-hip.local}
       # keycloak url
